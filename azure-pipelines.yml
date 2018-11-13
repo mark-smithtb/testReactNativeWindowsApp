@@ -19,8 +19,10 @@ steps:
 
 - task: AzurePowerShell@3
   inputs:
-    $pfxpath = '$(pfxPath)'
-    $password = 'password'
+
+    script:
+    '$pfxpath = "$(pfxPath)"
+    $password = "password"
 
     Add-Type -AssemblyName System.Security
     $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2
@@ -28,7 +30,7 @@ steps:
     $store = new-object system.security.cryptography.X509Certificates.X509Store -argumentlist "MY", CurrentUser
     $store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]"ReadWrite")
     $store.Add($cert)
-    $store.Close()
+    $store.Close()'
 
 - task: NodeTool@0
   inputs:
