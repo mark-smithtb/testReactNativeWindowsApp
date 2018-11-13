@@ -18,9 +18,9 @@ steps:
 - task: NuGetToolInstaller@0
 
 - script: |
-    certutil.exe -f -user -p password -importpfx $(pfxPath) NoRoot
-    
-- task: NodeTool@0
+    certutil.exe -f -user -p password -importPFX $(pfxPath)
+
+- task: NodeTool@1
   inputs:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
@@ -33,7 +33,7 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
+- task: VSBuild@3
   inputs:
     platform: 'x86'
     solution: '$(solution)'
