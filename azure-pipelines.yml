@@ -15,8 +15,6 @@ variables:
 
 steps:
 
-- script: echo $(build.artifactStagingDirectory)
-
 - task: NuGetToolInstaller@0
 
 - task: AzurePowerShell@3
