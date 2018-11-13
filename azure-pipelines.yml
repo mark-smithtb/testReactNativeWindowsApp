@@ -20,14 +20,14 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '8.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install
-  displayName: 'npm install and build'
+#- task: NodeTool@0
+#  inputs:
+#    versionSpec: '8.x'
+#  displayName: 'Install Node.js'
+#
+#- script: |
+#    npm install
+#  displayName: 'npm install and build'
 
 - task: VSBuild@1
   inputs:
