@@ -7,7 +7,7 @@ pool:
   vmImage: 'VS2017-Win2016'
 
 variables:
-  solution: 'D:\a\1\a\windows\**/*.sln'
+  solution: 'windows/**/*.sln'
   buildPlatform: 'x86|x64|ARM'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\'
