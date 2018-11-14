@@ -8,13 +8,14 @@ pool:
 
 variables:
   solution: 'windows/**/*.sln'
+  cert: 'windows/**/*.pfx'
   buildPlatform: 'x86|x64|ARM'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\'
 
 steps:
 
-- script: echo $(build.artifactStagingDirectory)
+- script: echo $(cert)
 
 - task: NuGetToolInstaller@0
 
