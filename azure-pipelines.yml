@@ -11,7 +11,7 @@ variables:
   cert: 'windows/**/*.pfx'
   buildPlatform: 'x86|x64|ARM'
   buildConfiguration: 'Release'
-  appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\'
+  appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
 
 steps:
 
