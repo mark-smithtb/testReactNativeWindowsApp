@@ -36,6 +36,7 @@ steps:
     restoreSolution: '$(solution)'
 
 - script: IF NOT EXIST D:/a/1/s/node_modules ECHO C:\FOLDER missing.
+- script: IF NOT EXIST D:/a/1/s/node_modules ECHO C:\FOLDER missing.
 
 
 - task: VSBuild@1
