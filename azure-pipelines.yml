@@ -20,7 +20,7 @@ steps:
 - task: NuGetToolInstaller@0
 
 - script: |
-    certutil.exe -f -user -p password -importPFX $(pfxPath) NoRoot
+    certutil.exe -f -user -p password -importPFX D:/a/1/s/windows/testReactNativeWindowsApp/testReactNativeWindowsApp_TemporaryKey.pfx NoRoot
 
 - task: NodeTool@0
   inputs:
