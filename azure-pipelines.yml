@@ -15,7 +15,7 @@ variables:
 
 steps:
 
-- script: echo $(ls build.artifactStagingDirectory)
+- script: ls $(build.artifactStagingDirectory)
 
 - task: NuGetToolInstaller@0
 
