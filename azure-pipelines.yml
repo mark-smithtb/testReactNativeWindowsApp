@@ -15,7 +15,7 @@ variables:
 
 steps:
 
-- script: echo $(cert)
+- script: echo '$(cert)'
 
 - task: NuGetToolInstaller@0
 
