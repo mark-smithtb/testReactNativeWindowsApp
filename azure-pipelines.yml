@@ -8,19 +8,17 @@ pool:
 
 variables:
   solution: 'windows/**/*.sln'
-  pfxPath:  'windows/**/*/pfx'
   buildPlatform: 'x86|x64|ARM'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\'
 
 steps:
 
+- script: echo $(build.artifactStagingDirectory)
+
 - task: NuGetToolInstaller@0
 
-- script: |
-    certutil.exe -f -user -p password -importPFX $(pfxPath) NoRoot
-
-- task: NodeTool@1
+- task: NodeTool@0
   inputs:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
@@ -29,11 +27,11 @@ steps:
     npm install
   displayName: 'npm install and build'
 
-- task: NuGetCommand@3
+- task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@4
+- task: VSBuild@1
   inputs:
     platform: 'x86'
     solution: '$(solution)'
