@@ -35,7 +35,7 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- script: echo $(dir ./node_modules)
+- script: dir ./node_modules
 
 - task: VSBuild@1
   inputs:
