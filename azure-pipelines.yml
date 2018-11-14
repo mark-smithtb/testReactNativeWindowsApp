@@ -15,7 +15,7 @@ variables:
 
 steps:
 
-- script: echo '$(cert)'
+- script: echo $(ls build.artifactStagingDirectory)
 
 - task: NuGetToolInstaller@0
 
