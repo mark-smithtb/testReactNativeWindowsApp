@@ -17,7 +17,7 @@ steps:
 
 #- script: echo $(Build.Repository.LocalPath)\windows
 #
-#- task: NuGetToolInstaller@0
+- task: NuGetToolInstaller@0
 
 - script: |
     certutil.exe -f -user -p password -importPFX D:/a/1/s/windows/testReactNativeWindowsApp/testReactNativeWindowsApp_TemporaryKey.pfx NoRoot
@@ -31,9 +31,9 @@ steps:
     npm install
   displayName: 'npm install and build'
 
-#- task: NuGetCommand@2
-#  inputs:
-#    restoreSolution: '$(solution)'
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
 
 
 
@@ -44,9 +44,9 @@ steps:
 - script: DIR node_modules\react-native-windows\Yoga\csharp\Yoga
 
 
-#- task: VSBuild@1
-#  inputs:
-#    platform: 'x86'
-#    solution: '$(solution)'
-#    configuration: '$(buildConfiguration)'
-#    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
+- task: VSBuild@1
+  inputs:
+    platform: 'x86'
+    solution: '$(solution)'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
