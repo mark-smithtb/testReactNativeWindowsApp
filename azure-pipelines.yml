@@ -19,9 +19,9 @@ steps:
 #
 #- task: NuGetToolInstaller@0
 
-#- script: |
-#    certutil.exe -f -user -p password -importPFX D:/a/1/s/windows/testReactNativeWindowsApp/testReactNativeWindowsApp_TemporaryKey.pfx NoRoot
-#
+- script: |
+    certutil.exe -f -user -p password -importPFX D:/a/1/s/windows/testReactNativeWindowsApp/testReactNativeWindowsApp_TemporaryKey.pfx NoRoot
+
 - task: NodeTool@0
   inputs:
     versionSpec: '8.x'
