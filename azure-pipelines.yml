@@ -35,7 +35,7 @@ steps:
 #  inputs:
 #    restoreSolution: '$(solution)'
 
-- script: DIR node_modules\react-native-windows\Yoga\csharp\Yoga\bin\Universal\x64\Release
+- script: DIR node_modules\react-native-windows\Yoga
 
 
 #- task: VSBuild@1
