@@ -58,3 +58,10 @@ steps:
     solution: '$(solution)'
     configuration: '$(buildConfiguration)'
     msbuildArgs: '/p:AppxBundlePlatforms="x64" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
+
+
+- task: AppCenterDistribute@1
+  inputs:
+    serverEndpoint: https://api.mobile.azure.com/v0.1
+    appSlug: 'msmith46234/testAppReactNative'
+    appFile: '$(build.artifactStagingDirectory)\AppxPackages\testReactNativeWindowsApp_1.0.1.0_x64_bundle.appxupload'
