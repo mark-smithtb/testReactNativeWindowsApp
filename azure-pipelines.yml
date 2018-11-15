@@ -53,3 +53,4 @@ steps:
     serverEndpoint: 'appCenter'
     appSlug: 'msmith46234/testAppReactNative'
     appFile: '$(build.artifactStagingDirectory)\AppxPackages\testReactNativeWindowsApp_1.0.1.0_x64_bundle.appxupload'
+    releaseNotesInput: 'test build'
