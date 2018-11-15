@@ -41,7 +41,7 @@ steps:
 
 - script: react-native run-windows
 
-- script: DIR node_modules\react-native-windows\Yoga\csharp\Yoga\bin\Universal\x64\Release
+- script: DIR node_modules\react-native-windows\Yoga\csharp\Yoga
 
 
 #- task: VSBuild@1
