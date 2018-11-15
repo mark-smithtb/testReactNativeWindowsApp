@@ -9,7 +9,7 @@ pool:
 variables:
   solution: 'windows/**/*.sln'
   cert: 'windows/**/*.pfx'
-  buildPlatform: 'x86|x64|ARM'
+  buildPlatform: 'x86'
   buildConfiguration: 'Release'
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
 
@@ -47,6 +47,13 @@ steps:
 - task: VSBuild@1
   inputs:
     platform: 'x86'
-    solution: '$(solution)'
+    solution: 'x86'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
+
+- task: VSBuild@1
+  inputs:
+    platform: 'x64'
+    solution: 'x64'
     configuration: '$(buildConfiguration)'
     msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
